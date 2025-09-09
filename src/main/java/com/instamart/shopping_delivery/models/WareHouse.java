@@ -3,6 +3,7 @@ package com.instamart.shopping_delivery.models;
 import jakarta.persistence.*;
 import lombok.Data;
 
+import java.util.List;
 import java.util.UUID;
 @Data
 @Entity
@@ -18,6 +19,11 @@ public class WareHouse {
     AppUser manger;
     @OneToOne
     Location location;
+
+    @OneToMany
+    List<WareHouseItem> wareHouseItems;
+
+
 
 
 }
