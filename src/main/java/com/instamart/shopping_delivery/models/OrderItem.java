@@ -1,28 +1,24 @@
 package com.instamart.shopping_delivery.models;
 
+
 import jakarta.persistence.*;
 import lombok.Data;
+import org.springframework.ui.context.support.UiApplicationContextUtils;
 
 import java.util.UUID;
 
 @Data
 @Entity
-@Table(name = "orders")
-
-public class AppOrder {
-
+@Table(name = "orderItems")
+public class OrderItem {
     @Id
             @GeneratedValue(strategy = GenerationType.AUTO)
     UUID id;
-    int totalItems;
-    int totalPrice;
-    String status;
+    UUID orderId;
+    UUID productId;
+    int quantity;
+    int totalAmount;
 
-    @ManyToOne
-    AppUser deliveryPartner;
-    @ManyToOne
-    AppUser shopper;
-String paymentType;
 
 
 }
