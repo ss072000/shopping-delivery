@@ -23,7 +23,7 @@ public class AppUser {
     Long phoneNumber;
     String userType;
     String status;
-
+@OneToMany
     List<Location> locations;
 
 
